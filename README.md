@@ -157,11 +157,11 @@ No known bugs at this time.
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
 
-# Second part of Airbnb:
+### Second part of Airbnb:
 
 Joann Vuong
 
-# Last changes 04/2020 by: 
+### Last changes 04/2020 by: 
 
 Kelly Villa - [Github](https://github.com/02KellyV)
 
