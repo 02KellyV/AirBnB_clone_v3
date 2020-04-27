@@ -159,9 +159,9 @@ Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://tw
 
 ##### Second part of Airbnb: Joann Vuong
 
-##### Last changes 04/2020 by: 
-
-Kelly Villa - [Github](https://github.com/02KellyV), Simón Parra - [Github](https://github.com/Simonster04)
+##### Last changes 04/2020 by:
+Kelly Villa - [Github](https://github.com/02KellyV)  
+Simón Parra - [Github](https://github.com/Simonster04)
 
 ## License
 Public Domain. No copy write protection. 
