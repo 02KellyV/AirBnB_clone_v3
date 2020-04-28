@@ -5,6 +5,7 @@ from models import storage
 from api.v1.views import app_views
 from flask import Flask, Blueprint, abort
 from flask import jsonify
+from flask_cors import CORS
 
 
 app = Flask(__name__)
