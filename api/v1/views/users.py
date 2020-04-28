@@ -15,7 +15,7 @@ def get_user(user_id=None):
     or a specific User object"""
     if user_id is None:
         users = [user.to_dict() for user
-                     in storage.all("User").values()]
+                 in storage.all("User").values()]
         return jsonify(users)
     user = storage.get("User", user_id)
     if user is None:
