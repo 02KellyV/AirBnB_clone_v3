@@ -72,7 +72,9 @@ class FileStorage:
     def get(self, cls, id):
         """retrieve one object"""
         clss = self.all(cls)
-        key = cls.__name__ + '.' + id
+        if type(cls) != str:
+            cls = cls.__name__
+        key = cls + '.' + id
         return clss.get(key)
 
     def count(self, cls=None):
