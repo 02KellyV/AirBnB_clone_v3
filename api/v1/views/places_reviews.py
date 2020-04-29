@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Contains places reviewss module"""
+"""Contains places_reviews module"""
 from api.v1.views import app_views
 from flask import Flask, Blueprint, jsonify, abort, make_response, request
 from models import storage, place, review
@@ -92,7 +92,7 @@ def update_review(review_id):
         abort(400, 'Not a JSON')
     for rq in request.get_json(silent=True):
         if rq not in ['id', 'user_id', 'place_id', 'created_at', 'updated_at']:
-            setattr(my_review, rq, request.json[req])
+            setattr(my_review, rq, request.json[rq])
     my_review.save()
     return jsonify(my_review.to_dict())
 
