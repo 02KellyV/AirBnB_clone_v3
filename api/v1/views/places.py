@@ -82,6 +82,7 @@ def create_place(city_id):
     my_place.save()
     return make_response(jsonify(my_place.to_dict()), 201)
 
+
 @app_views.route('/places/<string:place_id>', methods=['PUT'],
                  strict_slashes=False)
 def update_place(place_id):

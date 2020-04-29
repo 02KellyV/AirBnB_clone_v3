@@ -11,8 +11,6 @@ from models.amenity import Amenity
 @app_views.route('/cities',
                  methods=['GET'],
                  strict_slashes=False)
-
-
 def cities():
     """Cities handles all default RestFul API actions"""
     cities = []
@@ -25,8 +23,6 @@ def cities():
 @app_views.route('/states/<string:state_id>/cities',
                  methods=['GET'],
                  strict_slashes=False)
-
-
 def cities_state_id(state_id):
     """Retrieve an object into a valid JSON"""
     cities = []
@@ -41,8 +37,6 @@ def cities_state_id(state_id):
 @app_views.route('/cities/<string:city_id>',
                  methods=['GET'],
                  strict_slashes=False)
-
-
 def city_id(city_id):
     """Retrieve an object into a valid JSON"""
     my_city = storage.get('City', city_id)
@@ -54,8 +48,6 @@ def city_id(city_id):
 @app_views.route('/cities/<string:city_id>',
                  methods=['DELETE'],
                  strict_slashes=False)
-
-
 def city_id_delete(city_id):
     """Deletes a City object by id"""
     my_city = storage.get('City', city_id)
@@ -69,8 +61,6 @@ def city_id_delete(city_id):
 @app_views.route('states/<state_id>/cities',
                  methods=['POST'],
                  strict_slashes=False)
-
-
 def create_city(state_id):
     """Returns the new State with the status code 201"""
     my_state = storage.get('State', state_id)
@@ -89,8 +79,6 @@ def create_city(state_id):
 @app_views.route('/cities/<string:city_id>',
                  methods=['PUT'],
                  strict_slashes=False)
-
-
 def update_city(city_id):
     """Returns the State object with the status code 200"""
     my_city = storage.get('City', city_id)

@@ -90,9 +90,9 @@ def update_review(review_id):
         abort(404)
     if not request.json:
         abort(400, 'Not a JSON')
-    for req in request.get_json(silent=True):
-        if req not in ['id', 'user_id', 'place_id', 'created_at', 'updated_at']:
-            setattr(my_review, req, request.json[req])
+    for rq in request.get_json(silent=True):
+        if rq not in ['id', 'user_id', 'place_id', 'created_at', 'updated_at']:
+            setattr(my_review, rq, request.json[req])
     my_review.save()
     return jsonify(my_review.to_dict())
 

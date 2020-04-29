@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ View index:
-    endpoint that retrieves 
+    endpoint that retrieves
     number of objects by type"""
 from flask import Flask, Blueprint, jsonify
 from api.v1.views import app_views
@@ -37,21 +37,22 @@ def stats():
 
 if __name__ == "__main__":
     pass
+'''
+def _stats():
+    """retrieves the number of each objects by type"""
+    objs = {"Amenity": "amenities",
+            "City": "cities",
+            "State": "states",
+            "Place": "places",
+            "Review": "reviews",
+            "User": "users"}
+    classes = {"Amenity": Amenity, "City": City,
+               "Place": Place, "Review": Review,
+               "State": State, "User": User}
+    stats = {}
 
-#def _stats():
-#    """retrieves the number of each objects by type"""
-#    objs = {"Amenity": "amenities",
-#            "City": "cities",
-#            "State": "states",
-#            "Place": "places",
-#            "Review": "reviews",
-#            "User": "users"}
-#    classes = {"Amenity": Amenity, "City": City,
-#               "Place": Place, "Review": Review, 
-#               "State": State, "User": User}
-#    stats = {}
-#
-#    for key in objs.keys():
-#        stats[objs[key]] = storage.count(classes[key])
-#
-#    return jsonify(stats)
+    for key in objs.keys():
+        stats[objs[key]] = storage.count(classes[key])
+
+    return jsonify(stats)
+'''
