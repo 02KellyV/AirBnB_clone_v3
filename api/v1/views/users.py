@@ -50,7 +50,7 @@ def post_user():
         req = None
     if req is None:
         return make_response(jsonify({'error': 'Not a JSON'}), 400)
-    if 'mail' not in req:
+    if 'email' not in req:
         return make_response(jsonify({'error': "Missing email"}), 400)
     if 'password' not in req:
         return make_response(jsonify({'error': "Missing password"}), 400)
