@@ -7,12 +7,14 @@ from models import storage
 from models.user import User
 
 
-@app_views.route('/users', methods=['GET'], strict_slashes=False)
-@app_views.route('/users/<user_id>', methods=['GET'],
+@app_views.route('/users',
+                 methods=['GET'],
+                 strict_slashes=False)
+@app_views.route('/users/<user_id>',
+                 methods=['GET'],
                  strict_slashes=False)
 def get_user(user_id=None):
-    """Retrieves the list of all User objects
-    or a specific User object"""
+    """Retrieves list all User objs or specific User obj"""
     if user_id is None:
         users = [user.to_dict() for user
                  in storage.all("User").values()]
@@ -23,7 +25,8 @@ def get_user(user_id=None):
     return jsonify(user.to_dict())
 
 
-@app_views.route('/users/<user_id>', methods=['DELETE'],
+@app_views.route('/users/<user_id>',
+                 methods=['DELETE'],
                  strict_slashes=False)
 def del_user(user_id=None):
     """Deletes a User object"""
@@ -32,10 +35,13 @@ def del_user(user_id=None):
         abort(404)
     user.delete()
     storage.save()
+
     return jsonify({})
 
 
-@app_views.route('/users', methods=['POST'], strict_slashes=False)
+@app_views.route('/users',
+                 methods=['POST'],
+                 strict_slashes=False)
 def post_user():
     """Creates a User object"""
     try:
@@ -50,10 +56,12 @@ def post_user():
         return make_response(jsonify({'error': "Missing password"}), 400)
     user = User(**req)
     user.save()
+
     return make_response(jsonify(user.to_dict()), 201)
 
 
-@app_views.route('/users/<user_id>', methods=['PUT'],
+@app_views.route('/users/<user_id>',
+                 methods=['PUT'],
                  strict_slashes=False)
 def put_user(user_id=None):
     """Updates a User object"""
@@ -71,3 +79,7 @@ def put_user(user_id=None):
             setattr(user, key, val)
     user.save()
     return jsonify(user.to_dict())
+
+
+if __name__ == "__main__":
+    pass
