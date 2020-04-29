@@ -37,22 +37,3 @@ def stats():
 
 if __name__ == "__main__":
     pass
-'''
-def _stats():
-    """retrieves the number of each objects by type"""
-    objs = {"Amenity": "amenities",
-            "City": "cities",
-            "State": "states",
-            "Place": "places",
-            "Review": "reviews",
-            "User": "users"}
-    classes = {"Amenity": Amenity, "City": City,
-               "Place": Place, "Review": Review,
-               "State": State, "User": User}
-    stats = {}
-
-    for key in objs.keys():
-        stats[objs[key]] = storage.count(classes[key])
-
-    return jsonify(stats)
-'''
