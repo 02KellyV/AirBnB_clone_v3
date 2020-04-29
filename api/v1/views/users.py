@@ -51,7 +51,7 @@ def post_user():
     if req is None:
         return make_response(jsonify({'error': 'Not a JSON'}), 400)
     if 'mail' not in req:
-        return make_response(jsonify({'error': "Missing mail"}), 400)
+        return make_response(jsonify({'error': "Missing email"}), 400)
     if 'password' not in req:
         return make_response(jsonify({'error': "Missing password"}), 400)
     user = User(**req)
