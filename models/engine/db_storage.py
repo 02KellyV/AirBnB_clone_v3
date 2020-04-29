@@ -79,12 +79,11 @@ class DBStorage:
         """retrieve one object"""
         if (cls in classes or cls.__name__ in classes) and id is not None:
             try:
-                return self.__session.query(classes[cls.__name__])\
-                .filter(classes[cls.__name__].id == id).first()
+                cls = classes[cls.__name__]
+                return self.__session.query(cls).filter(cls.id == id).first()
             except:
-                return self.__session.query(classes[cls])\
-                .filter(classes[cls].id == id).first()
-
+                cls = classes[cls]
+                return self.__session.query(cls).filter(cls.id == id).first()
         else:
             return None
 
